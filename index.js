@@ -1,10 +1,11 @@
-console.log("Hellow Guys!....Welcome to My Quiz ");
+console.log("Hellow Guys!....Today's 26th of january which is known as Republic Day of India");
 console.log();
-console.log("Get Ready to play this fun game...Made by the one and only (Sanskruti Tayade) heheheh...")
+console.log("Let's play this Easy pezy Quiz to check your General Knowledge! ")
 console.log();
-console.log("----Let's see HOW MUCH YOU KNOW ME!----");
+console.log("----All Questions are related to the REPUBLIC NATION INDIA!----");
 console.log("");
-console.log("***The userinput answer must be in CAPS LOCK***");
+console.log("***ENTER THE OPTION AS AN ANSWER***(eg. a, b, c, d)");
+
 console.log("");
 console.log("Negative marking(-1) for Wrong answer.");
 console.log("");
@@ -18,11 +19,13 @@ console.log("^^Let's start the quiz^^");
 console.log("");
 var count = 0;
 
-function play(question, answer) {
-  var UserAnswer = readlineSync.question(question);
+function play(option, question, answer) {
 
-  if (UserAnswer === answer) {
-     console.log("");
+  var UserAnswer = readlineSync.question(question + "" + option);
+
+
+  if (UserAnswer.toUpperCase() === answer.toUpperCase()) {
+    console.log("");
     console.log("Yayy! It's a right answer!");
     console.log("");
     count++;
@@ -32,7 +35,7 @@ function play(question, answer) {
 
     console.log("Opps! You're Wrong!");
     count--;
-     console.log("");
+    console.log("");
     console.log("Current Score:- " + count);
   }
 }
@@ -40,34 +43,45 @@ function play(question, answer) {
 
 
 var questions = [{
-  question: "What is my Father's name..?",
-  answer: "ANIL",
+  question: "Who is the current Defense Minister of India? ",
+  option: " a) Rajnath Singh b) S. Jaishankar c) Smriti Irani d) Nirmala Sitharaman  ",
+
+  answer: "a",
 },
 {
-  question: "What is my favourite colour..? (Hint:- Everyone's fav colour)",
-  answer: "BLACK",
+  question: " Which of the following is the Capital city of India?",
+  option: " a) Mumbai b) Chennai c) New Delhi d) Kolkata ",
+
+  answer: "c",
 },
 {
-  question: "What is my hobby..?(Hint:- Something which is everywhere in my ....?) ",
-  answer: "PAINTING",
+  question: " Who wrote the national anthem of India? ",
+  option: " a) Rabindranath Tagore b) Bankim Chandra Chatterjee c) Sarojini Naidu d) Subramania Bharathi  ",
+  answer: "a",
 },
 {
-  question: "What is my birth year..? (You must know this) ",
-  answer: "2003",
+  question: " The President’s Bodyguard is a unit of which branch of the Indian Armed Forces? ",
+  option: " a) Army b) Navy c) Air Force d) Coast Guard  ",
+  answer: "a",
 },
 {
-  question: "Who is my favorite bollywood actress?",
-  answer: "ALIA BHATT",
+  question: " The President’s Bodyguard, a unit of the Indian Army, is the oldest surviving cavalry unit in the world.",
+
+  option: " True or False?  ",
+  answer: "True",
 },];
 
 for (i = 0; i < questions.length; i++) {
   var currentQue = questions[i];
-  play(currentQue.question, currentQue.answer);
+  play(currentQue.option, currentQue.question, currentQue.answer);
   console.log("");
 }
 console.log("");
 console.log("You've Completed the quiz and You're score is:- " + count);
 console.log("");
+if (count > 5) {
+  console.log("You're score is the hightest score")
+}
 console.log("Don't forget to send me the screenshot of you're score.");
- console.log("");
- console.log("Buii-Buii");
+console.log("");
+console.log("Buii-Buii");
